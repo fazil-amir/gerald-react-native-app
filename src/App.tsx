@@ -2,9 +2,9 @@ import React, { useRef, useState, useCallback } from 'react';
 import { Animated, SafeAreaView, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import Drawer from './Drawer';
-import MainContent from './MainContent';
-import { COLORS, ROUTES, ANIMATION } from '../constants';
+import Drawer from './components/Drawer';
+import MainContent from './components/MainContent';
+import { COLORS, ROUTES, ANIMATION } from './constants';
 
 const App: React.FC = () => {
   const [currentTab, setCurrentTab] = useState(ROUTES[0]);
