@@ -3,7 +3,7 @@
 A beautiful and modern React Native mobile application showcasing an animated drawer navigation system with a sleek, elegant user interface.
 
 <p align="center">
-  <video width="300" controls>
+  <video height="600" controls>
     <source src="./assets/recording.MP4" type="video/mp4">
   </video>
 </p>
