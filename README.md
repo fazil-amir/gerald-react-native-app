@@ -3,7 +3,7 @@
 A beautiful and modern React Native mobile application showcasing an animated drawer navigation system with a sleek, elegant user interface.
 
 <p align="center">
-  <img src="https://github.com/fazil-amir/gerald-react-native-app/blob/master/assets/recording.MP4" width="300" alt="DemoApp">
+  ![Demo Video](./assets/demo-video.mp4)
 </p>
 
 ## Project Overview
