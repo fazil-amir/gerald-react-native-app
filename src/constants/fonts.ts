@@ -4,7 +4,7 @@ export const FONTS = {
     small: 12,
     normal: 16,
     medium: 18,
-    large: 22,
+    large: 20,
     extraLarge: 28,
   },
   letterSpacing: {

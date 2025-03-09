@@ -19,16 +19,17 @@ export const createStyles = (showMenu: boolean) => StyleSheet.create<MainContent
     bottom: 0,
     left: 0,
     right: 0,
-    padding: LAYOUT.padding.extraLarge,
-    borderTopLeftRadius: LAYOUT.borderRadius.extraLarge
+    borderTopLeftRadius: LAYOUT.borderRadius.extraLarge,
   },
   contentView: {
-    flex: 1
+    paddingTop: LAYOUT.padding.extraLarge,
+    flexGrow: 1,
   },
   menuRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: LAYOUT.padding.extraLarge - 2, // 30
+    paddingTop: LAYOUT.padding.extraLarge * 2,
+    paddingHorizontal: LAYOUT.padding.extraLarge
   },
   menuIcon: {
     width: 20,

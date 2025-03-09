@@ -1,12 +1,17 @@
-// Define app routes and navigation structure
-import { IMAGES } from './images';
-import { ImageSourcePropType } from 'react-native';
+import Start from "../screens/Start";
+import Status from "../screens/Status";
+import Community from "../screens/Community";
+import Chats from "../screens/Chats";
+import Settings from "../screens/Settings";
+import Cart from "../screens/Cart";
+import Favourites from "../screens/Favourites";
+import Orders from "../screens/Orders";
 
 // Route type definition
 export interface Route {
   id: string;
   title: string;
-  icon: ImageSourcePropType;
+  screen: React.ComponentType<any>;
 };
 
 export interface Tab extends Route {}
@@ -16,23 +21,23 @@ export const ROUTES: Route[] = [
   {
     id: 'start',
     title: 'Start',
-    icon: IMAGES.home,
+    screen: Start,
   },
   {
     id: 'cart',
     title: 'Your Cart',
-    icon: IMAGES.search, // Using existing icons for now, can be replaced with appropriate icons later
+    screen: Cart,
   },
   {
     id: 'favourites',
     title: 'Favourites',
-    icon: IMAGES.notifications,
+    screen: Favourites,
   },
   {
     id: 'orders',
     title: 'Your Orders',
-    icon: IMAGES.settings,
-  }
+    screen: Orders,
+  },
 ];
 
 // App info

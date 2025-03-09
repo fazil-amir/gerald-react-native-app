@@ -1,7 +1,8 @@
 import React from 'react';
-import { Animated, Image, Text, TouchableOpacity, View } from 'react-native';
+import { Animated, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { createStyles } from './styles';
 import { IMAGES, ANIMATION, Tab } from '../../constants';
+import Start from '../../screens/Start';
 
 interface MainContentProps {
   currentTab: Tab;
@@ -25,6 +26,7 @@ const MainContent: React.FC<MainContentProps> = ({
   toggleDrawer
 }) => {
   const styles = createStyles(showMenu);
+  const CurrentScreen = currentTab.screen;
   
   return (
     <Animated.View style={[
@@ -45,7 +47,8 @@ const MainContent: React.FC<MainContentProps> = ({
       <Animated.View style={{
         transform: [{
           translateY: closeButtonOffset
-        }]
+        }],
+        flexGrow: 1,
       }}>
         <View style={styles.menuRow}>
           <TouchableOpacity
@@ -56,7 +59,7 @@ const MainContent: React.FC<MainContentProps> = ({
         </View>
 
         <View style={styles.contentView}>
-          {/* Main content goes here */}
+          <CurrentScreen /> 
         </View>
 
       </Animated.View>

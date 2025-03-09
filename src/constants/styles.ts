@@ -50,9 +50,9 @@ export const LAYOUT = {
     extraLarge: 30
   },
   margin: {
-    small: 8,
+    small: 6,
     medium: 15,
-    large: 20,
-    extraLarge: 50
+    large: 25,
+    extraLarge: 30
   }
 };

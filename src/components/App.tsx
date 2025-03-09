@@ -1,6 +1,7 @@
 import React, { useRef, useState, useCallback } from 'react';
 import { Animated, SafeAreaView, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import Drawer from './Drawer';
 import MainContent from './MainContent';
 import { COLORS, ROUTES, ANIMATION } from '../constants';
@@ -74,27 +75,36 @@ const App: React.FC = () => {
   ]);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Drawer 
-        currentTab={currentTab}
-        setCurrentTab={setCurrentTab}
-        drawerAnimValue={drawerAnimValue}
-        toggleDrawer={toggleDrawer}
-      />
+    <NavigationContainer theme={{
+      ...DefaultTheme,
+      colors: {
+        ...DefaultTheme.colors,
+        background: 'transparent',
+        card: 'transparent',
+      },
+    }}>
+      <SafeAreaView style={styles.container}>
+        <Drawer 
+          currentTab={currentTab}
+          setCurrentTab={setCurrentTab}
+          drawerAnimValue={drawerAnimValue}
+          toggleDrawer={toggleDrawer}
+        />
 
-      <MainContent
-        currentTab={currentTab}
-        showMenu={showMenu}
-        scaleValue={scaleValue}
-        mainContentOffsetX={mainContentOffsetX}
-        mainContentOffsetY={mainContentOffsetY}
-        closeButtonOffset={closeButtonOffset}
-        rotateValue={rotateValue}
-        toggleDrawer={toggleDrawer}
-      />
+        <MainContent
+          currentTab={currentTab}
+          showMenu={showMenu}
+          scaleValue={scaleValue}
+          mainContentOffsetX={mainContentOffsetX}
+          mainContentOffsetY={mainContentOffsetY}
+          closeButtonOffset={closeButtonOffset}
+          rotateValue={rotateValue}
+          toggleDrawer={toggleDrawer}
+        />
 
-      <StatusBar style="auto" />
-    </SafeAreaView>
+        <StatusBar style="auto" />
+      </SafeAreaView>
+    </NavigationContainer>
   );
 };
 
