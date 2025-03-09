@@ -6,27 +6,23 @@ import { IMAGES, ANIMATION, Tab } from '../../constants';
 interface MainContentProps {
   currentTab: Tab;
   showMenu: boolean;
-  setShowMenu: (show: boolean) => void;
   scaleValue: Animated.Value;
   mainContentOffsetX: Animated.Value;
   mainContentOffsetY: Animated.Value;
   closeButtonOffset: Animated.Value;
   rotateValue: Animated.Value;
-  drawerAnimValue: Animated.Value;
-  handleDrawerOpen: () => void;
+  toggleDrawer: () => void;
 }
 
 const MainContent: React.FC<MainContentProps> = ({
   currentTab,
   showMenu,
-  setShowMenu,
   scaleValue,
   mainContentOffsetX,
   mainContentOffsetY,
   closeButtonOffset,
   rotateValue,
-  drawerAnimValue,
-  handleDrawerOpen
+  toggleDrawer
 }) => {
   const styles = createStyles(showMenu);
   
@@ -53,13 +49,11 @@ const MainContent: React.FC<MainContentProps> = ({
       }}>
         <View style={styles.menuRow}>
           <TouchableOpacity
-            onPress={handleDrawerOpen}>
+            onPress={toggleDrawer}>
             <Image source={showMenu ? IMAGES.close : IMAGES.menu} style={styles.menuIcon} />
           </TouchableOpacity>
           <Text style={styles.headerText}>{currentTab.title}</Text>
         </View>
-
-        {/* <Text style={styles.titleText}>{currentTab}</Text> */}
 
         <View style={styles.contentView}>
           {/* Main content goes here */}

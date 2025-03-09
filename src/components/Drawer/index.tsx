@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, Image, Text, TouchableOpacity, View } from 'react-native';
+import { Animated, Text, TouchableOpacity, View } from 'react-native';
 import { styles, getTabStyles } from './styles';
 import { ROUTES, APP_INFO, Tab } from '../../constants';
 
@@ -7,16 +7,14 @@ interface DrawerProps {
   currentTab: Tab;
   setCurrentTab: (tab: Tab) => void;
   drawerAnimValue: Animated.Value;
-  setShowMenu: (show: boolean) => void;
-  handleDrawerClose: () => void;
+  toggleDrawer: () => void;
 }
 
 const Drawer: React.FC<DrawerProps> = ({ 
   currentTab, 
   setCurrentTab, 
   drawerAnimValue,
-  setShowMenu,
-  handleDrawerClose
+  toggleDrawer
 }) => {
   return (
     <Animated.View style={[
@@ -40,8 +38,7 @@ const Drawer: React.FC<DrawerProps> = ({
               style={getTabStyles(route.id, currentTab)}
               onPress={() => {
                 setCurrentTab(route);
-                setShowMenu(false);
-                handleDrawerClose();
+                toggleDrawer();
               }}
             >
               <Text style={styles.highlightedText} numberOfLines={1}>{route.title}</Text>
@@ -55,7 +52,9 @@ const Drawer: React.FC<DrawerProps> = ({
         <View style={styles.separator} /> 
         <TouchableOpacity 
           style={getTabStyles(null)}
-          onPress={() => console.log('Logout pressed')}
+          onPress={() => {
+            // Placeholder for logout functionality
+          }}
         >
           <Text style={styles.highlightedText} numberOfLines={1}>Sign Out</Text>
         </TouchableOpacity>

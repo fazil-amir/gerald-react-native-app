@@ -18,7 +18,7 @@ const App: React.FC = () => {
   const rotateValue = useRef(new Animated.Value(0)).current;
 
   // Handle opening the drawer and running all animations
-  const handleDrawerOpen = useCallback(() => {
+  const toggleDrawer = useCallback(() => {
     // Scale animation
     Animated.timing(scaleValue, {
       toValue: showMenu ? ANIMATION.scale.normal : ANIMATION.scale.reduced,
@@ -73,70 +73,24 @@ const App: React.FC = () => {
     rotateValue
   ]);
 
-  // Reset all animations to their default values
-  const handleDrawerClose = useCallback(() => {
-    // Reset all animations to their default values
-    Animated.parallel([
-      Animated.timing(scaleValue, {
-        toValue: 1,
-        duration: ANIMATION.duration.medium,
-        useNativeDriver: true
-      }),
-      Animated.timing(mainContentOffsetX, {
-        toValue: 0,
-        duration: ANIMATION.duration.medium,
-        useNativeDriver: true
-      }),
-      Animated.timing(mainContentOffsetY, {
-        toValue: 0,
-        duration: ANIMATION.duration.medium,
-        useNativeDriver: true
-      }),
-      Animated.timing(closeButtonOffset, {
-        toValue: 0,
-        duration: ANIMATION.duration.medium,
-        useNativeDriver: true
-      }),
-      Animated.timing(drawerAnimValue, {
-        toValue: 100,
-        duration: ANIMATION.duration.medium,
-        useNativeDriver: true
-      }),
-      Animated.timing(rotateValue, {
-        toValue: 0,
-        duration: ANIMATION.duration.medium,
-        useNativeDriver: true
-      })
-    ]).start();
-  }, [scaleValue,
-    mainContentOffsetX,
-    mainContentOffsetY,
-    closeButtonOffset,
-    drawerAnimValue,
-    rotateValue
-  ]);
-
   return (
     <SafeAreaView style={styles.container}>
       <Drawer 
         currentTab={currentTab}
         setCurrentTab={setCurrentTab}
         drawerAnimValue={drawerAnimValue}
-        setShowMenu={setShowMenu}
-        handleDrawerClose={handleDrawerClose}
+        toggleDrawer={toggleDrawer}
       />
 
       <MainContent
         currentTab={currentTab}
         showMenu={showMenu}
-        setShowMenu={setShowMenu}
         scaleValue={scaleValue}
         mainContentOffsetX={mainContentOffsetX}
         mainContentOffsetY={mainContentOffsetY}
         closeButtonOffset={closeButtonOffset}
         rotateValue={rotateValue}
-        drawerAnimValue={drawerAnimValue}
-        handleDrawerOpen={handleDrawerOpen}
+        toggleDrawer={toggleDrawer}
       />
 
       <StatusBar style="auto" />
