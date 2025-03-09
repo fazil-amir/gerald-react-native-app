@@ -27,8 +27,8 @@ app-demo/
 ├── assets/                 # Images, icons, and media files
 │   └── recording.MP4       # Demo recording of the app
 ├── src/                    # Source code
+│   ├── App.tsx             # Main App component
 │   ├── components/         # Reusable UI components
-│   │   ├── App.tsx         # Main App component
 │   │   ├── Drawer/         # Drawer navigation components
 │   │   └── MainContent/    # Main content area components
 │   ├── constants/          # Application constants (colors, routes, etc.)
