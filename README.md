@@ -2,9 +2,11 @@
 
 A beautiful and modern React Native mobile application showcasing an animated drawer navigation system with a sleek, elegant user interface.
 
+## Demo
 
 https://github.com/user-attachments/assets/8f19f696-cc41-4989-9749-1e83ebe43ccc
 
+*Note: If the video doesn't play in the README, check the assets/recording.MP4 file directly.*
 
 ## Project Overview
 
@@ -126,15 +128,6 @@ yarn start
 - Enhance accessibility features
 - Implement state management (Redux or Context API)
 
-## Demo
-
-Check out the app in action:
-
-
-https://github.com/user-attachments/assets/8f19f696-cc41-4989-9749-1e83ebe43ccc
-
-
-*Note: If the video doesn't play in the README, check the assets/recording.MP4 file directly.*
 
 ## Technologies Used
 
