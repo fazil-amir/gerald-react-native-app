@@ -3,7 +3,9 @@
 A beautiful and modern React Native mobile application showcasing an animated drawer navigation system with a sleek, elegant user interface.
 
 <p align="center">
-  ![Demo Video](./assets/demo-video.mp4)
+  <video width="300" controls>
+    <source src="./assets/recording.MP4" type="video/mp4">
+  </video>
 </p>
 
 ## Project Overview
@@ -131,7 +133,7 @@ yarn start
 Check out the app in action:
 
 <video width="320" height="240" controls>
-  <source src="https://github.com/fazil-amir/gerald-react-native-app/blob/master/assets/recording.MP4" type="video/mp4">
+  <source src="./assets/recording.MP4" type="video/mp4">
 </video>
 
 *Note: If the video doesn't play in the README, check the assets/recording.MP4 file directly.*
